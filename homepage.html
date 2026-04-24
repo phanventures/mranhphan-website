@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anh Phan — Founder of The Phan Club</title>
+  <meta name="description" content="Queer entrepreneur and community builder. Founder of The Phan Club — a community for queer entrepreneurs building businesses and lives on their own terms.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #F9F7FF;
+      --bg-blue: #F3F0FF;
+      --text: #0F172A;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+      --accent: #7C3AED;
+      --accent-dark: #6D28D9;
+      --accent-light: #EDE9FE;
+      --border: #E2E8F0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── NAV ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 68px;
+    }
+
+    .nav-logo {
+      font-size: 17px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a:not(.btn) {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:not(.btn):hover { color: var(--text); }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 8px;
+      padding: 11px 24px;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border: 2px solid var(--accent);
+    }
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      border-color: var(--accent-dark);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+    }
+    .btn-outline:hover {
+      background: var(--accent-light);
+    }
+    .btn-lg {
+      font-size: 16px;
+      padding: 14px 32px;
+      border-radius: 10px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 100px 48px 120px;
+      text-align: center;
+      min-height: calc(100vh - 68px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-text .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(48px, 7vw, 80px);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 24px;
+      color: var(--text);
+    }
+
+    .hero-text h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero-text p {
+      font-size: 20px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+
+    .hero-social {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .hero-social span {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    .social-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .social-link:hover { color: var(--accent); }
+
+
+    /* ── SECTION LAYOUT ── */
+    section {
+      padding: 100px 48px;
+    }
+
+    .section-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 4vw, 46px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .section-body {
+      font-size: 17px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      max-width: 580px;
+    }
+
+    .divider {
+      max-width: 1080px;
+      margin: 0 auto;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── PHAN CLUB FEATURE SECTION ── */
+    .phan-club-section {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .phan-club-hero {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .phan-club-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+      margin-bottom: 64px;
+    }
+
+    .phan-club-content h2 {
+      font-size: clamp(32px, 4.5vw, 52px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      margin-bottom: 24px;
+      color: var(--text);
+    }
+
+    .phan-club-content h2 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .phan-club-content p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .phan-club-content .ctas { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .phan-club-visual {
+      background: linear-gradient(135deg, var(--accent-light) 0%, #DDD6FE 100%);
+      border-radius: 20px;
+      padding: 40px;
+      border: 1px solid #C4B5FD;
+    }
+
+    .phan-club-visual .pc-tagline {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      line-height: 1.3;
+      margin-bottom: 28px;
+      white-space: nowrap;
+    }
+
+    .what-you-get {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .get-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .get-dot {
+      width: 28px;
+      height: 28px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .get-dot svg {
+      width: 14px;
+      height: 14px;
+      stroke: white;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .get-item p {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .get-item p span {
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    /* Stats bar */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .stat-item {
+      background: #fff;
+      padding: 32px 28px;
+      text-align: center;
+    }
+
+    .stat-item:first-child { border-radius: 16px 0 0 16px; }
+    .stat-item:last-child { border-radius: 0 16px 16px 0; }
+
+    .stat-num {
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--accent);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
+    /* ── ABOUT SECTION ── */
+    .about-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .about-photo-wrap {
+      position: relative;
+    }
+
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: var(--bg-blue);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      font-size: 13px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0,0,0,0.06);
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-content h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .about-content p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .credential-list {
+      list-style: none;
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .credential-list li {
+      font-size: 14px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 500;
+    }
+
+    .credential-list li::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--accent-light);
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── COHORT SECTION ── */
+    .cohort-section {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cohort-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .cohort-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+      margin-bottom: 64px;
+    }
+
+    .cohort-content h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .cohort-content h2 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .cohort-content p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .cohort-details {
+      display: flex;
+      gap: 24px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .cohort-detail-pill {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 100px;
+    }
+
+    .cohort-content .ctas { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .cohort-info {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .cohort-info-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .cohort-info-num {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--accent);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      min-width: 40px;
+    }
+
+    .cohort-info-text strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .cohort-info-text p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .cohort-funnel {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 36px;
+    }
+
+    .cohort-funnel h4 {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 24px;
+    }
+
+    .funnel-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .funnel-step {
+      text-align: center;
+      padding: 0 8px;
+      position: relative;
+    }
+
+    .funnel-step:not(:last-child)::after {
+      content: '→';
+      position: absolute;
+      right: -8px;
+      top: 16px;
+      font-size: 16px;
+      color: var(--text-light);
+      transform: translateY(-50%);
+    }
+
+    .funnel-step-circle {
+      width: 36px;
+      height: 36px;
+      background: var(--accent-light);
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--accent-dark);
+    }
+
+    .funnel-step strong {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .funnel-step span {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.4;
+      display: block;
+    }
+
+    /* ── PILLARS SECTION ── */
+    .pillars-section { background: var(--bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+    .pillars-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 40px;
+      margin-bottom: 56px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 32px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .card-num {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ── PRICING SECTION ── */
+    .pricing-toggle-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 4px;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pricing-toggle-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 28px;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: transparent;
+      color: var(--text-muted);
+    }
+
+    .pricing-toggle-btn.active {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .pricing-save-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #16a34a;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 100px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    .pricing-card {
+      background: #fff;
+      border: 2px solid var(--accent);
+      border-radius: 20px;
+      padding: 48px 48px 40px;
+      max-width: 480px;
+      margin: 0 auto;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    .pricing-plan {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .pricing-price {
+      margin-bottom: 8px;
+    }
+
+    .pricing-price .amount {
+      font-size: 64px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--text);
+      line-height: 1;
+      transition: all 0.15s;
+    }
+
+    .pricing-price .period {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .pricing-billed {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      font-weight: 500;
+      min-height: 20px;
+    }
+
+    .pricing-billed strong {
+      color: var(--text);
+    }
+
+    .pricing-divider {
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 28px;
+    }
+
+    .pricing-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+
+    .pricing-features li {
+      font-size: 15px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 500;
+    }
+
+    .pricing-features li::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: var(--accent-light);
+      border-radius: 50%;
+      flex-shrink: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='%23374151' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: 11px;
+      background-position: center;
+    }
+
+    .pricing-note {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .pricing-note a {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* ── CONTENT / YOUTUBE SECTION ── */
+    .content-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .video-card {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .video-card:hover {
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .video-thumb {
+      aspect-ratio: 16/9;
+      background: var(--bg-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .video-info { padding: 20px; }
+
+    .video-info h4 {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.45;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .video-info span {
+      font-size: 12px;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    /* ── JOIN CTA SECTION ── */
+    .join-section {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+      padding: 100px 48px;
+      text-align: center;
+    }
+
+    .join-section .section-label {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .join-section h2 {
+      font-size: clamp(34px, 5.5vw, 60px);
+      font-weight: 900;
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      color: #fff;
+      margin-bottom: 20px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .join-section p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.8);
+      max-width: 500px;
+      margin: 0 auto 44px;
+      line-height: 1.75;
+    }
+
+    .btn-white {
+      background: #fff;
+      color: var(--accent-dark);
+      border: 2px solid #fff;
+      font-weight: 800;
+    }
+    .btn-white:hover {
+      background: var(--accent-light);
+      border-color: var(--accent-light);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+    .btn-outline-white:hover {
+      border-color: #fff;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .join-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 40px 48px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .footer-logo {
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .footer-logo span { color: var(--accent); }
+
+    .footer-links { display: flex; gap: 28px; }
+
+    .footer-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+
+    .footer-copy {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      nav { padding: 0 24px; }
+      section { padding: 72px 24px; }
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 60px 24px 72px;
+        min-height: auto;
+        gap: 48px;
+      }
+      .hero-ctas { justify-content: center; }
+      .hero-social { justify-content: center; }
+
+      .phan-club-top { grid-template-columns: 1fr; gap: 40px; }
+      .stats-bar { grid-template-columns: 1fr 1fr; }
+      .stat-item:first-child { border-radius: 16px 0 0 0; }
+      .stat-item:nth-child(2) { border-radius: 0 16px 0 0; }
+      .stat-item:nth-child(3) { border-radius: 0 0 0 16px; }
+      .stat-item:last-child { border-radius: 0 0 16px 0; }
+
+      .about-inner { grid-template-columns: 1fr; gap: 40px; }
+      .about-photo-wrap { max-width: 300px; margin: 0 auto; }
+
+      .cohort-top { grid-template-columns: 1fr; gap: 40px; }
+      .funnel-steps { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .funnel-step:not(:last-child)::after { display: none; }
+
+      .pillars-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .card-grid { grid-template-columns: 1fr; }
+
+      .content-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .content-grid { grid-template-columns: 1fr; }
+
+      .join-section { padding: 72px 24px; }
+      footer { padding: 32px 24px; }
+      .footer-inner { flex-direction: column; text-align: center; gap: 20px; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links a:not(.btn) { display: none; }
+      nav { padding: 0 16px; }
+      .hero-badge { display: none; }
+      .stats-bar { grid-template-columns: 1fr 1fr; }
+    }
+    /* ── SECTION COLOR THEMES (rainbow) ── */
+    .theme-red    { --accent: #DC2626; --accent-dark: #B91C1C; --accent-light: #FEE2E2; --bg-soft: #FFF5F5; --bg-blue: #FEE2E2; }
+    .theme-orange { --accent: #EA580C; --accent-dark: #C2410C; --accent-light: #FFEDD5; --bg-soft: #FFF7ED; --bg-blue: #FFEDD5; }
+    .theme-amber  { --accent: #D97706; --accent-dark: #B45309; --accent-light: #FEF3C7; --bg-soft: #FFFBEB; --bg-blue: #FEF3C7; }
+    .theme-green  { --accent: #16A34A; --accent-dark: #15803D; --accent-light: #DCFCE7; --bg-soft: #F0FDF4; --bg-blue: #DCFCE7; }
+    .theme-teal   { --accent: #0891B2; --accent-dark: #0E7490; --accent-light: #CFFAFE; --bg-soft: #ECFEFF; --bg-blue: #CFFAFE; }
+    .theme-blue   { --accent: #2563EB; --accent-dark: #1D4ED8; --accent-light: #DBEAFE; --bg-soft: #EFF6FF; --bg-blue: #DBEAFE; }
+    .theme-indigo { --accent: #4F46E5; --accent-dark: #4338CA; --accent-light: #E0E7FF; --bg-soft: #EEF2FF; --bg-blue: #E0E7FF; }
+    .theme-violet { --accent: #7C3AED; --accent-dark: #6D28D9; --accent-light: #EDE9FE; --bg-soft: #F5F3FF; --bg-blue: #EDE9FE; }
+
+    /* ── PRIDE STRIPE ── */
+    :root {
+      --pride-gradient: linear-gradient(
+        to right,
+        #FF0018 0%,     #FF0018 12.5%,
+        #FF8C00 12.5%,  #FF8C00 25%,
+        #FFD700 25%,    #FFD700 37.5%,
+        #008026 37.5%,  #008026 50%,
+        #004DFF 50%,    #004DFF 62.5%,
+        #750787 62.5%,  #750787 75%,
+        #55CDFC 75%,    #55CDFC 87.5%,
+        #F7A8B8 87.5%,  #F7A8B8 100%
+      );
+    }
+    .pride-stripe {
+      display: block;
+      height: 5px;
+      background: var(--pride-gradient);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="site-header">
+    <div class="pride-stripe"></div>
+    <!-- NAV -->
+    <nav>
+      <div class="nav-logo">Anh <span>Phan</span></div>
+      <div class="nav-links">
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">YouTube</a>
+        <a href="#phan-club" class="btn btn-primary">Join The Phan Club</a>
+      </div>
+    </nav>
+    <div class="pride-stripe"></div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero theme-red">
+    <div class="hero-text">
+      <div class="eyebrow">
+        Queer Entrepreneur &nbsp;&middot;&nbsp; Solo Operator &nbsp;&middot;&nbsp; Community Builder
+      </div>
+      <h1>Hi, I'm Anh.<br><span style="white-space:nowrap">I help entrepreneurs</span><br><em>build businesses that work.</em></h1>
+      <p>Multi-business solo operator and founder of The Phan Club — practical systems, real operations, and a community for people who are done winging it.</p>
+      <div class="hero-ctas">
+        <a href="#phan-club" class="btn btn-primary btn-lg">Join The Phan Club</a>
+        <a href="#" class="btn btn-outline btn-lg">Watch on YouTube</a>
+      </div>
+      <div class="hero-social">
+        <span>Find me on</span>
+        <a href="#" class="social-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          Instagram
+        </a>
+        <a href="#" class="social-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.95a8.16 8.16 0 0 0 4.77 1.52V7.02a4.85 4.85 0 0 1-1-.33z"/></svg>
+          TikTok
+        </a>
+        <a href="#" class="social-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          YouTube
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT / YOUTUBE SECTION -->
+  <section class="theme-orange" style="background: var(--bg-soft); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="section-inner">
+      <div class="content-header">
+        <div>
+          <span class="section-label">Free Content</span>
+          <h2 class="section-title">Start here. It's all free.</h2>
+          <p class="section-body">I document the real stuff — building businesses, running operations, being a queer entrepreneur. No fluff, no paywall. Follow along wherever you are.</p>
+        </div>
+        <div style="display:flex; gap:12px; flex-shrink:0; flex-wrap:wrap; align-items:center;">
+          <a href="#" class="btn btn-outline">Subscribe on YouTube</a>
+          <a href="#" class="btn btn-outline">Follow on TikTok</a>
+        </div>
+      </div>
+      <div class="content-grid">
+        <div class="video-card">
+          <div class="video-thumb">Coming Soon</div>
+          <div class="video-info">
+            <h4>How I Built a 200-Person Dodgeball Community From Zero</h4>
+            <span>Coming soon on YouTube</span>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumb">Coming Soon</div>
+          <div class="video-info">
+            <h4>The AI Workflows I Actually Use to Run 3 Businesses</h4>
+            <span>Coming soon on YouTube</span>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumb">Coming Soon</div>
+          <div class="video-info">
+            <h4>What It's Really Like Building a Business as a Queer Entrepreneur</h4>
+            <span>Coming soon on YouTube</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLARS SECTION -->
+  <section class="pillars-section theme-amber">
+    <div class="section-inner">
+      <div class="pillars-header">
+        <div>
+          <span class="section-label">What I Teach</span>
+          <h2 class="section-title">Build it. Run it. Scale it.</h2>
+          <p class="section-body">Practical frameworks from someone who is actually in it — not teaching from a course.</p>
+        </div>
+      </div>
+      <div class="card-grid">
+        <div class="card">
+          <span class="card-num">01</span>
+          <h3>Business Building</h3>
+          <p>How to start and grow a business as a solo operator — validating ideas, building an audience, launching offers, and creating revenue without a full team behind you.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">02</span>
+          <h3>Operations &amp; Systems</h3>
+          <p>The workflows, AI tools, and operational infrastructure that let you run multiple things without losing your mind. Practical and immediately applicable.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">03</span>
+          <h3>Queer Entrepreneurship</h3>
+          <p>The unfiltered reality of building a business and a life on your own terms as a queer person — the wins, the hard parts, and what no one else is talking about.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHAN CLUB FEATURE SECTION -->
+  <section class="phan-club-section theme-green" id="phan-club">
+    <div class="phan-club-hero">
+      <div class="phan-club-top">
+        <div class="phan-club-content">
+          <span class="section-label">The Phan Club</span>
+          <h2>A community for <span style="white-space:nowrap">queer entrepreneurs</span> — and the people <em>who show up for them.</em></h2>
+          <p>You don't have to figure this out alone. The Phan Club is where queer entrepreneurs and their allies come together to build businesses, share what's actually working, and support each other through the parts no one talks about.</p>
+          <p>We're queer-led and values-forward. The majority of us are queer — but if you're a genuine ally who shares these values, you belong here too.</p>
+          <p>We're in founding member mode right now — seats are limited, the rate locks in forever, and you'll be shaping what this community becomes.</p>
+          <div class="ctas">
+            <a href="#" class="btn btn-primary btn-lg">Join as a Founding Member</a>
+            <a href="#about" class="btn btn-outline btn-lg">Learn About Anh</a>
+          </div>
+        </div>
+        <div class="phan-club-visual">
+          <p class="pc-tagline">You don't have to build a business alone.</p>
+          <div class="what-you-get">
+            <div class="get-item">
+              <div class="get-dot">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <p>Queer entrepreneurs &amp; their allies <span>— all stages, all industries</span></p>
+            </div>
+            <div class="get-item">
+              <div class="get-dot">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <p>Real frameworks &amp; systems <span>— from someone who actually runs businesses</span></p>
+            </div>
+            <div class="get-item">
+              <div class="get-dot">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <p>Cohort programs <span>— small groups, deep accountability</span></p>
+            </div>
+            <div class="get-item">
+              <div class="get-dot">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <p>In-person experiences &amp; trips <span>— because community happens IRL too</span></p>
+            </div>
+            <div class="get-item">
+              <div class="get-dot">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <p>Queer-led &amp; values-forward <span>— allies who genuinely show up are welcome</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Businesses built &amp; operated</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">8+</div>
+          <div class="stat-label">Years building communities</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">200+</div>
+          <div class="stat-label">Players in MN Dodgeball</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Queer-owned &amp; operated</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="theme-teal" id="about">
+    <div class="section-inner">
+      <div class="about-inner">
+        <div class="about-photo-wrap">
+          <div class="about-photo">
+            <!-- Replace with: <img src="your-photo.jpg" alt="Anh Phan"> -->
+            <span style="font-size:13px; font-weight:600; color: var(--text-light);">Your photo here</span>
+          </div>
+        </div>
+        <div class="about-content">
+          <span class="section-label">About Anh</span>
+          <h2>Real operator.<br>Not a guru.</h2>
+          <p>I was born in Saigon and immigrated to Massachusetts at age 3. Growing up as the kid of Vietnamese immigrants in Worcester, I learned early that belonging isn't something that just happens — it's something you build, intentionally, for the people who don't already have it.</p>
+          <p>That shaped everything. The immigrant experience, the queer identity layered on top of all of it — none of it came with a ready-made community. You find your people, or you create the space where they can find each other. That's been the throughline of everything I've built.</p>
+          <p>I run Minnesota Dodgeball (leagues, tournaments, 200+ players), Always Funday (events and experiences), and Phan Ventures — all as a solo operator, while working a full-time day job. The only reason any of it works is systems: workflows, AI tools, and operational infrastructure that let me run multiple businesses without a team. That's what I teach.</p>
+          <p>The Phan Club is where it all comes together — the business building frameworks, the operational systems, and the honest reality of being a queer Vietnamese-American entrepreneur who's still very much in it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COHORT SECTION -->
+  <section class="cohort-section theme-blue" id="cohort">
+    <div class="cohort-inner">
+      <div class="cohort-top">
+        <div class="cohort-content">
+          <span class="section-label">The Cohort Program</span>
+          <h2>6 weeks. Small group.<br><em>Real accountability.</em></h2>
+          <p>The cohort is the fastest way into The Phan Club — and the deepest. It's a structured 6-week program for queer entrepreneurs and allies who are ready to stop spinning and start building with intention.</p>
+          <p>You'll work through business building frameworks, operations, and the systems that let you actually run a business without burning out — alongside 10–15 other people who get it, because they're living it too.</p>
+          <p>Cohort graduates get a free year of membership. That's intentional — you'll be the most invested members in the room.</p>
+          <div class="cohort-details">
+            <span class="cohort-detail-pill">6 Weeks</span>
+            <span class="cohort-detail-pill">10 Business Owners</span>
+            <span class="cohort-detail-pill">Intimate Setting</span>
+          </div>
+          <div class="ctas">
+            <a href="#" class="btn btn-primary btn-lg">Apply to a Cohort</a>
+          </div>
+        </div>
+        <div class="cohort-info">
+          <div class="cohort-info-card">
+            <div class="cohort-info-num">01</div>
+            <div class="cohort-info-text">
+              <strong>Business Launch &amp; Growth</strong>
+              <p>How to validate, start, and grow a business as a solo operator — the frameworks that actually translate to revenue.</p>
+            </div>
+          </div>
+          <div class="cohort-info-card">
+            <div class="cohort-info-num">02</div>
+            <div class="cohort-info-text">
+              <strong>Operations for Solo Operators</strong>
+              <p>Running a business without a team. Workflows, AI systems, the infrastructure that keeps you moving without burning out.</p>
+            </div>
+          </div>
+          <div class="cohort-info-card">
+            <div class="cohort-info-num">03</div>
+            <div class="cohort-info-text">
+              <strong>Accountability &amp; Peer Learning</strong>
+              <p>Weekly group sessions, real feedback, and a cohort of people who are building at the same time as you.</p>
+            </div>
+          </div>
+          <div class="cohort-info-card">
+            <div class="cohort-info-num">04</div>
+            <div class="cohort-info-text">
+              <strong>Direct Access to Anh</strong>
+              <p>Not pre-recorded content. Live sessions, real conversations, direct feedback on your specific situation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cohort-funnel">
+        <h4>How it works</h4>
+        <div class="funnel-steps">
+          <div class="funnel-step">
+            <div class="funnel-step-circle">1</div>
+            <strong>Join the Waitlist</strong>
+            <span>Get early access when the next cohort opens</span>
+          </div>
+          <div class="funnel-step">
+            <div class="funnel-step-circle">2</div>
+            <strong>6-Week Cohort</strong>
+            <span>Small group program</span>
+          </div>
+          <div class="funnel-step">
+            <div class="funnel-step-circle">3</div>
+            <strong>Free Membership Year</strong>
+            <span>Included for all cohort graduates</span>
+          </div>
+          <div class="funnel-step">
+            <div class="funnel-step-circle">4</div>
+            <strong>Ongoing Community</strong>
+            <span>Founding rate locks in now</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING SECTION -->
+  <section class="theme-indigo" id="pricing">
+    <div class="section-inner" style="text-align: center;">
+      <span class="section-label">Membership</span>
+      <h2 class="section-title">Simple pricing. No surprises.</h2>
+      <p class="section-body" style="margin: 0 auto;">Same access either way. Annual saves you the most — founding members lock in this rate forever.</p>
+
+      <div class="pricing-toggle-wrap">
+        <button class="pricing-toggle-btn active" onclick="setPlan('biannual')">6-Month</button>
+        <button class="pricing-toggle-btn" onclick="setPlan('annual')">Annual <span class="pricing-save-badge">Save $101</span></button>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-plan" id="pricing-plan-label">6-Month Membership</div>
+        <div class="pricing-price">
+          <span class="amount" id="pricing-amount">$50</span><span class="period">/mo</span>
+        </div>
+        <div class="pricing-billed" id="pricing-billed">Billed as <strong>$300</strong> every 6 months</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li>Full community access</li>
+          <li>Business &amp; operations frameworks</li>
+          <li>Weekly member sessions</li>
+          <li>Cohort alumni network</li>
+          <li>In-person experiences &amp; trips</li>
+          <li>Founding rate locked in forever</li>
+        </ul>
+        <a href="#" class="btn btn-primary" style="width: 100%; text-align: center; display: block;">Join as a Founding Member</a>
+      </div>
+
+      <p class="pricing-note">Not ready to commit? <a href="#cohort">Apply for the cohort</a> first — graduates get a free year of membership included.</p>
+    </div>
+  </section>
+
+  <script>
+    function setPlan(plan) {
+      const buttons = document.querySelectorAll('.pricing-toggle-btn');
+      const label = document.getElementById('pricing-plan-label');
+      const amount = document.getElementById('pricing-amount');
+      const billed = document.getElementById('pricing-billed');
+
+      if (plan === 'annual') {
+        buttons[0].classList.remove('active');
+        buttons[1].classList.add('active');
+        label.textContent = 'Annual Membership';
+        amount.textContent = '$42';
+        billed.innerHTML = 'Billed as <strong>$499</strong> per year — save $101';
+      } else {
+        buttons[1].classList.remove('active');
+        buttons[0].classList.add('active');
+        label.textContent = '6-Month Membership';
+        amount.textContent = '$50';
+        billed.innerHTML = 'Billed as <strong>$300</strong> every 6 months';
+      }
+    }
+  </script>
+
+  <!-- JOIN CTA SECTION -->
+  <section class="join-section theme-violet">
+    <div class="section-inner">
+      <span class="section-label">The Phan Club</span>
+      <h2>You belong here.<br>Come build with us.</h2>
+      <p>Founding member spots are open. Join a community of queer entrepreneurs and allies who are done doing this alone.</p>
+      <div class="join-ctas">
+        <a href="#" class="btn btn-white btn-lg">Join as a Founding Member</a>
+        <a href="#" class="btn btn-outline-white btn-lg">Watch on YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Anh <span>Phan</span></div>
+      <div class="footer-links">
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">YouTube</a>
+        <a href="#phan-club">The Phan Club</a>
+      </div>
+      <div class="footer-copy">&copy; 2026 Anh Phan / Phan Ventures LLC</div>
+    </div>
+  </footer>
+
+</body>
+</html>
